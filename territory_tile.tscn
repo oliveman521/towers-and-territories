@@ -6,14 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8681"]
 size = Vector2(40, 40)
 
-[node name="Territory Tile" type="Node2D"]
-position = Vector2(-34, 136)
+[node name="Territory Tile" type="Area2D"]
 script = ExtResource("1_44ub8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p8681")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_xnfev")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_p8681")

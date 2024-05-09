@@ -6,8 +6,12 @@ var main_atlas_id: int = 0
 const TERRITORY_TILE: PackedScene = preload("res://territory_tile.tscn")
 
 func _ready() -> void:
-	get_used_cells_by_id(main_layer,0)
-
+	var territory_tiles: Array[Vector2i] = get_used_cells_by_id(main_layer,0)
+	for coord: Vector2i in territory_tiles:
+		var new_territory_tile: Territory_Tile = TERRITORY_TILE.instantiate()
+		add_child(new_territory_tile)
+		new_territory_tile.global_position = to_global(map_to_local(coord))
+		set_cell(main_layer,coord)
 
 func _input(event: InputEvent) -> void:
 	if not event is InputEventMouse: return
@@ -16,11 +20,8 @@ func _input(event: InputEvent) -> void:
 	if not mouse_event.is_pressed(): return
 	
 	var cell_clicked: Vector2i = local_to_map(mouse_event.position)
-	print(cell_clicked)
 	var atlas_coord: Vector2i = get_cell_atlas_coords(main_layer,cell_clicked)
 	var current_tile_alt: int = get_cell_alternative_tile(main_layer,cell_clicked)
 	var alt_count: int = tile_set.get_source(main_atlas_id).get_alternative_tiles_count(atlas_coord)
-	
-	tile_set
 	
 	#set_cell(main_layer,cell_clicked,main_atlas_id,atlas_coord,(current_tile_alt + 1) % alt_count)
