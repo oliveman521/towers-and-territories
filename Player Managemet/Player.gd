@@ -81,9 +81,10 @@ func change_tower(joystick_input: Vector2) -> void:
 		if dist == 0:
 			continue #this tower doesn't count
 		if alignment_value > alignment_threshold:
-			if dist/alignment_value < shorted_dist:
+			var weighted_dist: float = dist/pow(alignment_value,2)
+			if weighted_dist < shorted_dist:
 				closest_tower = tower
-				shorted_dist = dist
+				shorted_dist = weighted_dist
 	
 	if closest_tower:
 		current_tower = closest_tower
