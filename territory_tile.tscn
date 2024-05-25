@@ -1,16 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://6pkmrxu5fj7h"]
 
-[ext_resource type="Script" path="res://Territory.gd" id="1_44ub8"]
-[ext_resource type="Texture2D" uid="uid://dtp3uau22m2uv" path="res://WhiteTile.svg" id="2_xnfev"]
+[ext_resource type="Script" path="res://scripts/TerritoryTile.gd" id="1_e73nq"]
+[ext_resource type="Texture2D" uid="uid://dtp3uau22m2uv" path="res://SVGs/WhiteTile.svg" id="2_mjdr6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8681"]
 size = Vector2(40, 40)
 
 [node name="Territory Tile" type="Area2D"]
-script = ExtResource("1_44ub8")
+collision_mask = 3
+script = ExtResource("1_e73nq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_p8681")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_xnfev")
+texture = ExtResource("2_mjdr6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

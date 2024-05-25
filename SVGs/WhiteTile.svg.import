@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mgqw435rlfxc"
-path="res://.godot/imported/tower_Layer 1.svg-d181441daabef5e30d2e73eb238b401d.ctex"
+uid="uid://dtp3uau22m2uv"
+path="res://.godot/imported/WhiteTile.svg-4228c107378b8951bfec8f8f34692341.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tower_Layer 1.svg"
-dest_files=["res://.godot/imported/tower_Layer 1.svg-d181441daabef5e30d2e73eb238b401d.ctex"]
+source_file="res://SVGs/WhiteTile.svg"
+dest_files=["res://.godot/imported/WhiteTile.svg-4228c107378b8951bfec8f8f34692341.ctex"]
 
 [params]
 
@@ -32,6 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=0.2
+svg/scale=2.0
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false

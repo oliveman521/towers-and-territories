@@ -13,11 +13,23 @@ config_version=5
 config/name="Towers & Territories"
 run/main_scene="res://Game_Scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://SVGs/icon.svg"
 
 [autoload]
 
 GameManager="*res://scripts/GameManager.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_2="Projectiles"
+
+[physics]
+
+2d/default_linear_damp=0.0
 
 [rendering]
 

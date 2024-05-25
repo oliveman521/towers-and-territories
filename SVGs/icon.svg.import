@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dev5a443i7hnx"
-path="res://.godot/imported/SolidTile.svg-fc02d68739d2c48ce5bac173f5947a19.ctex"
+uid="uid://c8i58t2w6lbly"
+path="res://.godot/imported/icon.svg-8ea0ca7df1f8d85e27e392a63324b965.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SolidTile.svg"
-dest_files=["res://.godot/imported/SolidTile.svg-fc02d68739d2c48ce5bac173f5947a19.ctex"]
+source_file="res://SVGs/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-8ea0ca7df1f8d85e27e392a63324b965.ctex"]
 
 [params]
 
@@ -32,6 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=2.0
+svg/scale=1.0
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false

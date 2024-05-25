@@ -22,6 +22,7 @@ var players: Array[Player]:
 var max_players: int = colors.size()
 
 func _process(delta: float) -> void:
+	
 	for device_id in range(max_players):
 		if Input.is_joy_button_pressed(device_id,JOY_BUTTON_A):
 			var player_already_connected = players.any(func(p: Player) -> bool: return p.device_id == device_id)
@@ -29,8 +30,37 @@ func _process(delta: float) -> void:
 				add_player(device_id)
 
 func add_player(device_id: int) -> void:
-	print(device_id)
+	print('Player ', device_id, " Connected")
 	const player_prefab = preload("res://Player Managemet/player.tscn")
 	var new_player: Player = player_prefab.instantiate() as Player
-	add_child(new_player)
 	new_player.device_id = device_id
+	new_player.color = colors[device_id]
+	add_child(new_player)
+
+func get_player_by_color(color: Color) -> Player:
+	for p: Player in players:
+		if p.color == color:
+			return p 
+	return null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

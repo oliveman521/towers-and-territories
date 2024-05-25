@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://qpw1a070il4n"]
+
+[node name="Tower Line" type="Line2D"]
+position = Vector2(0, 28)
+points = PackedVector2Array(-11, 0, 11, 0)
+width = 2.0
+default_color = Color(0, 0, 0, 1)

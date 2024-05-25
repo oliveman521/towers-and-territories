@@ -1,17 +1,21 @@
 extends TileMap
+class_name GameMap
 
 var main_layer: int = 0
 var main_atlas_id: int = 0
 
 const TERRITORY_TILE: PackedScene = preload("res://territory_tile.tscn")
+var instance: GameMap
 
 func _ready() -> void:
+	instance = self
 	var territory_tiles: Array[Vector2i] = get_used_cells_by_id(main_layer,0)
 	for coord: Vector2i in territory_tiles:
-		var new_territory_tile: Territory_Tile = TERRITORY_TILE.instantiate()
-		add_child(new_territory_tile)
-		new_territory_tile.global_position = to_global(map_to_local(coord))
-		set_cell(main_layer,coord)
+		if get_cell_atlas_coords(main_layer,coord) == Vector2i.ZERO:
+			var new_territory_tile: TerritoryTile = TERRITORY_TILE.instantiate()
+			add_child(new_territory_tile)
+			new_territory_tile.global_position = to_global(map_to_local(coord))
+			set_cell(main_layer,coord)
 
 func _input(event: InputEvent) -> void:
 	if not event is InputEventMouse: return

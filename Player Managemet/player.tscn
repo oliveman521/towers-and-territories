@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckjlgxx4lsi5l"]
+[gd_scene load_steps=4 format=3 uid="uid://ckjlgxx4lsi5l"]
 
 [ext_resource type="Script" path="res://Player Managemet/Player.gd" id="1_7iuop"]
+[ext_resource type="Texture2D" uid="uid://dp6cvjrlxgyu3" path="res://SVGs/scout.svg" id="2_3kviw"]
 
-[node name="Player" type="Node"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpp8h"]
+radius = 15.0333
+
+[node name="Player" type="Node2D"]
 script = ExtResource("1_7iuop")
+
+[node name="Scout" type="Area2D" parent="."]
+z_index = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scout"]
+shape = SubResource("CircleShape2D_tpp8h")
+
+[node name="Sprite" type="Sprite2D" parent="Scout"]
+texture = ExtResource("2_3kviw")

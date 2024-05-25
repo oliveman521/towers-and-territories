@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://df8la1kbwjugi"]
+
+[ext_resource type="Script" path="res://scripts/Tower.gd" id="1_7soak"]
+[ext_resource type="Texture2D" uid="uid://cf1i0wl54xbys" path="res://SVGs/targeting_arrow_Circle.svg" id="2_2whhj"]
+[ext_resource type="Texture2D" uid="uid://mgqw435rlfxc" path="res://SVGs/tower_Layer 1.svg" id="2_f6bh1"]
+[ext_resource type="Texture2D" uid="uid://b2wru6lnpk0kh" path="res://SVGs/tower_Orb.svg" id="3_142je"]
+[ext_resource type="Texture2D" uid="uid://dfbpd64w7lvru" path="res://SVGs/targeting_arrow_Arrow.svg" id="3_c51jb"]
+
+[sub_resource type="Curve" id="Curve_qhgna"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.184959, 0.98429), 0.0410037, 0.0410037, 0, 0, Vector2(0.496283, 0.359781), -0.960778, -0.960778, 0, 0, Vector2(1, 0.09658), -0.366069, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dsnk8"]
+radius = 55.0
+
+[node name="Tower" type="Node2D" groups=["Tower"]]
+position = Vector2(179, 175)
+script = ExtResource("1_7soak")
+charge_rate_curve = SubResource("Curve_qhgna")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_2whhj")
+
+[node name="TargetingArrow" type="Sprite2D" parent="."]
+texture = ExtResource("3_c51jb")
+offset = Vector2(68.17, 0)
+
+[node name="White Background" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 29.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 3.14159
+pivot_offset = Vector2(0, 1)
+color = Color(0.843137, 0.843137, 0.843137, 1)
+
+[node name="Tower Fill" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 29.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 3.14159
+pivot_offset = Vector2(0, 1)
+
+[node name="Tower body" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+texture = ExtResource("2_f6bh1")
+
+[node name="Bottom Marker" type="Marker2D" parent="Tower body"]
+position = Vector2(0, 36)
+
+[node name="Top Marker" type="Marker2D" parent="Tower body"]
+position = Vector2(0, -40)
+
+[node name="Tower Top" type="Sprite2D" parent="."]
+position = Vector2(0, -76)
+texture = ExtResource("3_142je")
+
+[node name="ShootCooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Capture Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Capture Area"]
+shape = SubResource("CircleShape2D_dsnk8")

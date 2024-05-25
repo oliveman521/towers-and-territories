@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5yhwr04no8d0"]
+
+[ext_resource type="Texture2D" uid="uid://b2wru6lnpk0kh" path="res://SVGs/tower_Orb.svg" id="1_fqgx4"]
+
+[node name="Number Line Player Marker" type="Sprite2D"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_fqgx4")
