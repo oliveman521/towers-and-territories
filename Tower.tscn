@@ -11,7 +11,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.184959, 0.98429), 0.0410037, 0
 point_count = 4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsnk8"]
-radius = 55.0
+radius = 67.0
 
 [node name="Tower" type="Node2D" groups=["Tower"]]
 position = Vector2(179, 175)

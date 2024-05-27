@@ -16,7 +16,6 @@ signal color_changed
 var connected_tower: Tower = null
 
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body is Projectile:
 		body.collided_with(self)

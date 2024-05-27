@@ -28,6 +28,15 @@ var controlled_towers: Array[Tower]:
 					ct.append(t)
 		return ct
 
+var controlled_tiles: Array[TerritoryTile]:
+	get:
+		var tiles: Array[TerritoryTile] = []
+		for c in GameMap.instance.get_children():
+			if c is TerritoryTile:
+				if c.color == color:
+					tiles.append(c)
+		return tiles
+
 var tower_switch_debounce: bool = false
 func _ready() -> void:
 	scout.global_position = RoundManager.instance.scout_spawn_point.global_position

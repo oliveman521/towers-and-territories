@@ -5,7 +5,7 @@ var main_layer: int = 0
 var main_atlas_id: int = 0
 
 const TERRITORY_TILE: PackedScene = preload("res://territory_tile.tscn")
-var instance: GameMap
+static var instance: GameMap
 
 func _ready() -> void:
 	instance = self

@@ -55,7 +55,7 @@ projectiles_per_shot = 5
 firing_arc_degrees = 80.0
 
 [node name="Tower17" parent="Towers" instance=ExtResource("3_s2rrn")]
-position = Vector2(-228, -147)
+position = Vector2(-220, -145)
 base_charge_rate = 0.3
 max_charge = 3
 full_auto = false
@@ -107,6 +107,9 @@ position = Vector2(14, 337)
 
 [node name="Tower22" parent="Towers" instance=ExtResource("3_s2rrn")]
 position = Vector2(300, 180)
+
+[node name="Tower24" parent="Towers" instance=ExtResource("3_s2rrn")]
+position = Vector2(17, 217)
 
 [node name="Tower23" parent="Towers" instance=ExtResource("3_s2rrn")]
 position = Vector2(298, 335)

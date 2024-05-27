@@ -73,11 +73,10 @@ func _ready() -> void:
 			var ter: TerritoryTile = c as TerritoryTile
 			if ter.global_position == global_position:
 				connected_tile = ter
-	
-	connected_tile.connected_tower = self
-	connected_tile.color_changed.connect(func()->void:
-		color = connected_tile.color
-		)
+				connected_tile.connected_tower = self
+				connected_tile.color_changed.connect(func()->void:
+					color = connected_tile.color
+				)
 	
 	var tower_body: Node2D = $"Tower body" as Node2D
 	const tower_line_prefab: PackedScene = preload("res://tower_line.tscn") as PackedScene

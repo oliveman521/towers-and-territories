@@ -9,6 +9,10 @@ var colors: Array[Color] = [
 	Color("#ff924c"),
 	Color("#4267ac"),
 	Color("#35264a"),
+	Color("#05fb18"),
+	Color("#05fb18"),
+	Color("#4d5c46"),
+	Color("#a3bdc6"),
 ]
 
 var players: Array[Player]:
